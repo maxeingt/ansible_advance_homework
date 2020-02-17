@@ -1,7 +1,7 @@
 ---
-- name: Create new server instances 
+- name: Create new server instances  
   os_server:
-    cloud: ospcloud
+    cloud: "{{ ospcloud }}"
     name: "{{ item.0.name }}"
     image: "{{ item.0.image }}"
     key_name: "{{ item.0.key_name }}"
@@ -18,9 +18,9 @@
   with_subelements:
     - "{{ osp_servers }}"
     - meta
-- name: Add floating IP to Servers
+- name: Add floating IP servers
   os_floating_ip:
-    cloud: ospcloud
+    cloud: "{{ ospcloud }}"
     state: present
     reuse: yes
     server: "{{ item.value.name }}"
@@ -31,7 +31,7 @@
    
 - name: OpenStack servers
   os_server_facts:
-    cloud: ospcloud
+    cloud: "{{ ospcloud }}"
   register: result
 
 - name: Wait for server to be available

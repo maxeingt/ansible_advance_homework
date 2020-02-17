@@ -4,3 +4,4 @@
   vars:
     external_network: ext_network
     internal_network: int_network
+    ospcloud: ospcloud
