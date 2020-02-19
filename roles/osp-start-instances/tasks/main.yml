@@ -1,0 +1,12 @@
+---
+# tasks file for roles/osp-instance-delete
+  - name: Fetch Instance Info
+    os_server_info:
+     cloud: ospcloud
+    register: instance
+  - name: Start instance
+    os_server_action:
+      action: start
+      timeout: 200
+      cloud: ospcloud
+      server: db
