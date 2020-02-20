@@ -2,9 +2,9 @@
 bastion.eda5.example.opentlc.com
 
 [workstation]
-workstation-dfd8.rhpds.opentlc.com
+workstation-dfd8.rhpds.opentlc.com ansible_ssh_user=cloud-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
 
 [all:vars]
-ansible_user=max.cernaflores@atos.net
-ansible_ssh_private_key_file=/root/.ssh/eda5key.pem
+#ansible_user=max.cernaflores-atos.net
+#ansible_ssh_private_key_file=/root/.ssh/eda5key.pem
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
