@@ -31,12 +31,12 @@
   with_dict: "{{ osp_servers }}"
    
 - name: OpenStack servers
-  os_server_facts:
+  os_server_info:
     cloud: "{{ ospcloud }}"
   register: result
 
 - debug:
-    msg: "{{ result.ansible_facts.openstack_servers }}"
+    msg: "{{ result.openstack_servers }}"
 
 - name: Wait for server to be available
   wait_for:
@@ -46,4 +46,4 @@
     timeout: 600
   delegate_to: "{{ inventory_hostname }}"
   with_items: 
-    - "{{ result.ansible_facts.penstack_servers }}"
+    - "{{ result.openstack_servers }}"

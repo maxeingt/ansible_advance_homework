@@ -1,2 +1,19 @@
 ---
 # tasks file for lb-tier
+- name: install {{ service }}
+  state: latest
+
+- name: enable {{ service }} at boot
+  service:
+    name: "{{ service }}"
+    enabled: yes
+
+- name: load balance over app servers
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+
+- name: start {{ service }}
+  service:
+    name: "{{ service }}
+    state: restarted
