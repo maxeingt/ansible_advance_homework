@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/osp-instance-delete
   - name: Fetch Instance Info
-    os_server_info:
+    os_server_facts:
      cloud: ospcloud
     register: instance
 
@@ -10,4 +10,4 @@
       cloud: ospcloud
       name: " {{ item.name }}"
       state: absent 
-    with_items: "{{ instance.openstack_servers }}"   
+    with_items: "{{ instance.ansible_facts.openstack_servers }}"   
