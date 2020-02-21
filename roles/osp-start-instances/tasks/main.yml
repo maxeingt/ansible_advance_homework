@@ -6,11 +6,12 @@
     register: instance
 
   - debug: 
-     msg: "{{instance.ansible_facts.openstack_servers.server}}"
+     msg: "{{instance.ansible_facts.openstack_servers}}"
 
-#  - name: Start instance
-#    os_server_action:
-#      action: start
-#      timeout: 200
-#      cloud: ospcloud
-#      server: app2
+  - name: Start instance
+    os_server_action:
+      action: start
+      timeout: 200
+      cloud: ospcloud
+      server: "{{ item.hostname }}"
+    with_items: "{{ instance.ansible_facts.openstack_servers }}"
