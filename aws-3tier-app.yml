@@ -10,3 +10,10 @@
     include_role:
       name: lb-tier
 
+  - name: setup app tier
+    include_role:
+      name: app-tier
+
+  - name: setup db tier
+    include_role:
+      name: db-tier
