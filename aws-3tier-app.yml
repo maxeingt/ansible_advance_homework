@@ -16,7 +16,7 @@
       name: app-tier
     when: "'frontends' in group_names"
 
-  - name: setup app tier
+  - name: setup apache
     include_role:
       name: aws-apache-role
     when: "'frontends' in group_names"
