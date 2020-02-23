@@ -2,10 +2,10 @@
 bastion.fcf5.example.opentlc.com ansible_connection=ssh ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
 
 [bastion_tower]
-bastion.eda5.example.opentlc.com
+bastion.89da.example.opentlc.com
 
 [workstation]
-workstation-dfd8.rhpds.opentlc.com ansible_ssh_user=cloud-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
+workstation-67e3.rhpds.opentlc.com ansible_ssh_user=cloud-user ansible_ssh_private_key_file=/root/.ssh/openstack.pem
 
 [frontends]
 frontend1 ansible_host=frontend1.fcf5.example.opentlc.com ansible_connection=ssh ansible_ssh_user=ec2-user ansible_ssh_private_key_file=/root/.ssh/fcf5key.pem
@@ -28,5 +28,5 @@ support
 
 [all:vars]
 #ansible_user=max.cernaflores-atos.net
-#ansible_ssh_private_key_file=/root/.ssh/eda5key.pem
+#ansible_ssh_private_key_file=/root/.ssh/89dakey.pem
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
