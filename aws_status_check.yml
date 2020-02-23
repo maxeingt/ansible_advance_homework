@@ -1,5 +1,5 @@
-- hosts: tag_instance_filter_three_tier_app_psrivast_redhat_com
-#- hosts: awsbastion
+#- hosts: tag_instance_filter_three_tier_app_psrivast_redhat_com
+- hosts: awsbastion
   gather_facts: false
   tasks:
   - name: Check the instances status
