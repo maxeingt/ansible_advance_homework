@@ -1,0 +1,19 @@
+---
+# tasks file for aws-apache-role
+- name: install software
+  yum:
+    name:
+    - httpd
+    state: latest
+
+- name: copy static index.html to var/www/html/index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    mode: u=rw,go=r
+
+- name: start and enable apache httpd at boot
+  service:
+    name: httpd
+    state: started
+    enabled: yes
