@@ -43,7 +43,6 @@
     tower_verify_ssl: no
     ssh_key_data: /root/.ssh/89dakey.pem
     username: "{{ opentlc_login }}"
-    become_method: sudo
 
 - name: Remove secret
   file:
