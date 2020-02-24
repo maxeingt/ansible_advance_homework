@@ -1,6 +1,6 @@
 ---
 - name: configuration 3 tier AWS
-  hosts: all
+  hosts: threetierapp
   gather_facts: true
   become: true
   tasks:
