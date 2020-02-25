@@ -1,4 +1,4 @@
-- hosts: threetierapp
+- hosts: tag_instance_filter_three_tier_app_max_cernaflores_atos_net 
   gather_facts: true
   tasks:
   - name: Check the instances status
