@@ -1,4 +1,2 @@
 ---
 # tasks file for base-config
-- name: Clean yum repository
-  command: yum clean all
