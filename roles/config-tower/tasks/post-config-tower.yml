@@ -41,7 +41,7 @@
     tower_username: admin
     tower_password: r3dh4t1!
     tower_verify_ssl: no
-    ssh_key_data: /root/.ssh/2b68key.pem
+    ssh_key_data: /root/.ssh/5f6bkey.pem
     username: "{{ opentlc_login }}"
     become_method: sudo
 
