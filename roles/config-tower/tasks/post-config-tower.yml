@@ -11,7 +11,7 @@
     tower_host: tower1.{{tower_GUID}}.example.opentlc.com
     tower_username: admin
     tower_password: r3dh4t1!
-    ssh_key_data: "/root/.ssh/openstack.pem"
+    ssh_key_data: "{{ lookup('file', '/root/.ssh/openstack.pem') }}"
     username: cloud-user
 
 - name: Create Inventory
@@ -41,8 +41,9 @@
     tower_username: admin
     tower_password: r3dh4t1!
     tower_verify_ssl: no
-    ssh_key_data: /root/.ssh/89dakey.pem
+    ssh_key_data: /root/.ssh/2b68key.pem
     username: "{{ opentlc_login }}"
+    become_method: sudo
 
 - name: Remove secret
   file:
