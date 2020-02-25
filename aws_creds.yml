@@ -20,9 +20,9 @@
     register: file_to_copy
 
   - name: get Key
-      slurp:
+    slurp:
         src: /root/.ssh/{{ file_to_copy.stdout }}
-      register: keyfile
+    register: keyfile
 
   - name: Tower Creds key file
     tower_credential:
